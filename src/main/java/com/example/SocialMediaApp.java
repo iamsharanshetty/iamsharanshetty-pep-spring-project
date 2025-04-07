@@ -1,14 +1,10 @@
 package com.example;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.client.RestTemplate;
-
-import static org.springframework.boot.SpringApplication.run;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Import;
+import com.example.config.AppConfig;
 
 /**
  * This is a class that is used to run your application.
@@ -17,6 +13,8 @@ import static org.springframework.boot.SpringApplication.run;
  *
  */
 @SpringBootApplication
+@Import(AppConfig.class)
+@EntityScan("com.example.entity")
 public class SocialMediaApp {
     /**
      * Runs the application
